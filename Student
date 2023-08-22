@@ -1,0 +1,66 @@
+SOURCE CODE:-
+
+struct Student {
+    Name: String,
+    Email: String,
+    Phno: String,
+    ID: u32,
+}
+fn main() {
+    let mut students: Vec<Student> = vec![
+        Student {
+            Name: String::from("Stefan"),
+            Email: String::from("stefan@gmail.com"),
+            Phno: String::from("222-7196"),
+            ID: 1,
+        },
+        Student {
+            Name: String::from("Charan"),
+            Email: String::from("charan@gmail.com"),
+            Phno: String::from("987-7832-3210"),
+            ID: 2,
+        },
+        Student {
+            Name: String::from("Pawan Kalyan"),
+            Email: String::from("pspk@gmail.com"),
+            Phno: String::from("987-9765-3210"),
+            ID: 3,
+        },
+        Student {
+            Name: String::from("Mahesh Babu"),
+            Email: String::from("prince@example.com"),
+            Phno: String::from("987-3543-3210"),
+            ID: 4,
+        },
+        Student {
+            Name: String::from("Damon"),
+            Email: String::from("damon@example.com"),
+            Phno: String::from("987-6542-3254"),
+            ID: 5,
+        },
+    ];
+    // Example of accessing a student's details by index
+    let index = 0;
+    match students.get(index) {
+        Some(student) => {
+            println!("Student Name: {}", student.Name);
+            println!("Student Email: {}", student.Email);
+            println!("Student Phno: {}", student.Phno);
+            println!("Student ID: {}", student.ID);
+        }
+        None => {
+            println!("Student not found at index {}", index);
+        }
+    }
+
+    // Example of handling out-of-bounds access
+    let invalid_index = 10;
+    match students.get(invalid_index) {
+        Some(student) => {
+            println!("Student name: {}", student.Name);
+        }
+        None => {
+            println!("Invalid index: {}", invalid_index);
+        }
+    }
+}
